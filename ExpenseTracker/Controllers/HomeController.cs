@@ -18,7 +18,17 @@ namespace ExpenseTracker.Controllers
             return View();
         }
 
+        public IActionResult Register()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult Calculate()
         {
             return View();
         }

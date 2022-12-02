@@ -2,7 +2,24 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="text-center" style="display: flex;
+    flex-direction: column;">
+    <h1 class="display-4">Login</h1>
+    <br />
+    <br />
+    <form method="post" asp-controller="Calculate" asp-action="Index">
+    
+        <input class="local-input" type="email" required id="username" name="username" placeholder="Enter your Mail Id" />
+        <br />
+        <br />
+        <input class="local-input" type="password" required id="password" name="password" placeholder="Enter Password" />
+        <br />
+        <br />
+        <br />
+        <button class="local-button" type="submit" title="Login">Login</button>
+        <br />
+        <br />
+
+    </form>
+    <button class="local-button" style="background-color:gray" onclick="location.href='@Url.Action("Register", "Home")'"> Sign Up</button>
 </div>

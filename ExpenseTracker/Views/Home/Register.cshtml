@@ -1,0 +1,23 @@
+﻿@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="text-center" style="display: flex;
+    flex-direction: column;">
+    <h1 class="display-4">Register New User</h1>
+    <br />
+    <br />
+    <form method="post" asp-controller="Register" asp-action="Index">
+    <input class="local-input" type="text" name="firstName" required placeholder="First Name" />
+    <br />
+    <input class="local-input" type="text" name="lastName" required placeholder="Last Name" />
+    <br />
+    <input class="local-input" type="email" name="email" required placeholder="Enter your Mail Id" />
+    <br />
+    <input class="local-input" type="password" name="password" required placeholder="Enter Password" />
+    <br />
+    <input class="local-input" type="password" name="repassword" required placeholder="Re Enter Password" />
+    <br />
+    <button class="local-button" type="submit"> Sign Up</button>
+    </form>
+</div>
