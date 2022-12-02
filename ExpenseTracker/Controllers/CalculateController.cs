@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using CoreLibrary;
+using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseTracker.Controllers
 {
@@ -14,7 +15,7 @@ namespace ExpenseTracker.Controllers
         [HttpPost]
         public IActionResult? Index(string username, string password)
         {
-            if (username != null && password != null)
+            if (username != null && password != null && Validators.IsPasswordValid(password))
             {
                 return View();
             }

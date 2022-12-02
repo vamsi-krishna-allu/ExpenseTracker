@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "CoreLibrary/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/CoreLibrary.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/CoreLibrary.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "CoreLibrary/1.0.0": {
+      "type": "project",
+      "path": "../CoreLibrary/CoreLibrary.csproj",
+      "msbuildProject": "../CoreLibrary/CoreLibrary.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "CoreLibrary >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\visha\\.nuget\\packages\\": {},
@@ -39,7 +58,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\visha\\source\\ExpenseTrackerSolution\\CoreLibrary\\CoreLibrary.csproj": {
+              "projectPath": "C:\\Users\\visha\\source\\ExpenseTrackerSolution\\CoreLibrary\\CoreLibrary.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
