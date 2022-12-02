@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Calculate Expense Page";
+}
+
+<div class="text-center" style="display: flex;
+    flex-direction: column;">
+    <h1 class="display-4">Calculate Expense</h1>
+    <br />
+    <input class="local-input" type="number" required name="expense" placeholder="Enter your expense" />
+    <br />
+    
+        <select class="local-input">
+            <option value="0">Groceries</option>
+            <option value="1">Phone Bill</option>
+            <option value="2">Bus Pass</option>
+            <option value="3">Subscriptions</option>
+            <option value="4">Alcohol</option>
+            <option value="5">Furniture</option>
+            <option value="6">Taxi or Travel</option>
+            <option value="7">Electricity</option>
+            <option value="8">Hydro</option>
+            <option value="9">Laundry</option>
+            <option value="10">Miscellaneous</option>
+        </select>
+    
+    <br />
+    <button class="local-button"> Save Expense</button>
+</div>
