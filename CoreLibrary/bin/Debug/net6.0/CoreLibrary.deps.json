@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "ExpenseTracker/1.0.0": {
-        "dependencies": {
-          "CoreLibrary": "1.0.0"
-        },
-        "runtime": {
-          "ExpenseTracker.dll": {}
-        }
-      },
       "CoreLibrary/1.0.0": {
         "runtime": {
           "CoreLibrary.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "ExpenseTracker/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "CoreLibrary/1.0.0": {
       "type": "project",
       "serviceable": false,

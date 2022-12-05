@@ -24,3 +24,6 @@ C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\obj\Debug\net6.0\ref
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\obj\Debug\net6.0\ExpenseTracker.pdb
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\obj\Debug\net6.0\ExpenseTracker.genruntimeconfig.cache
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\obj\Debug\net6.0\ref\ExpenseTracker.dll
+C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\bin\Debug\net6.0\CoreLibrary.dll
+C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\bin\Debug\net6.0\CoreLibrary.pdb
+C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\obj\Debug\net6.0\ExpenseTracker.csproj.CopyComplete
