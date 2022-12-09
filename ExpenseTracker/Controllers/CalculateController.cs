@@ -1,4 +1,5 @@
 ﻿using CoreLibrary;
+using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseTracker.Controllers
@@ -15,11 +16,24 @@ namespace ExpenseTracker.Controllers
         [HttpPost]
         public IActionResult? Index(string username, string password)
         {
-            if (username != null && password != null && Validators.IsPasswordValid(password))
+            LoginModel loginModel = new LoginModel(username, password);
+            using (var client = new HttpClient())
             {
-                return View();
+                client.BaseAddress = new Uri("https://localhost:7249/");
+
+                var postTask = client.PostAsJsonAsync<LoginModel>("Home", loginModel);
+                postTask.Wait();
+
+                var result = postTask.Result;
+                if (result.IsSuccessStatusCode)
+                {
+                    return View("../Calculate/Index");
+                }
             }
-            return View("../Home/Index");
+
+            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
+
+            return View();
         }
     }
 }

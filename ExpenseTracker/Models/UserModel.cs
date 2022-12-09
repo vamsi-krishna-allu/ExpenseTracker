@@ -8,11 +8,11 @@ namespace ExpenseTracker.Models
         public string LastName { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        [JsonIgnore]
         public string UserId { get; set; }
        
-        public UserModel(string FirstName, string LastName, string Email, string Password)
+        public UserModel(string UserId, string FirstName, string LastName, string Email, string Password)
         {
+            this.UserId = UserId;
             this.FirstName = FirstName;
             this.LastName = LastName;
             this.Email = Email;
