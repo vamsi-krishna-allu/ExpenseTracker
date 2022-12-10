@@ -10,3 +10,5 @@ C:\Users\visha\source\ExpenseTrackerSolution\CoreLibrary\obj\Debug\net6.0\CoreLi
 C:\Users\visha\source\ExpenseTrackerSolution\CoreLibrary\obj\Debug\net6.0\refint\CoreLibrary.dll
 C:\Users\visha\source\ExpenseTrackerSolution\CoreLibrary\obj\Debug\net6.0\CoreLibrary.pdb
 C:\Users\visha\source\ExpenseTrackerSolution\CoreLibrary\obj\Debug\net6.0\ref\CoreLibrary.dll
+C:\Users\visha\source\ExpenseTrackerSolution\CoreLibrary\bin\Debug\net6.0\CoreLibrary.runtimeconfig.json
+C:\Users\visha\source\ExpenseTrackerSolution\CoreLibrary\obj\Debug\net6.0\CoreLibrary.genruntimeconfig.cache

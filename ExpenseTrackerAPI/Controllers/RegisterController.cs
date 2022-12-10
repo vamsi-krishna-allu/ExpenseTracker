@@ -17,7 +17,7 @@ namespace ExpenseTracker.Controllers
         [HttpPost(Name = "registerUser")]
         public String RegisterUser(UserModel userModel)
         {
-            new UserModel(userModel.UserId, userModel.FirstName, userModel.LastName, userModel.Email, userModel.Password);
+            //new UserModel(userModel.UserId, userModel.FirstName, userModel.LastName, userModel.Email, userModel.Password);
             //TODO: need to pass this model to store data in database
             return "SUCCESS";
         }

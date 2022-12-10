@@ -1,0 +1,14 @@
+{
+  "dependencies": {
+    "apis1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.ApiManagement/service/ExpenseTrackerAPI/apis/ExpenseTrackerAPI",
+      "type": "apis.azure"
+    },
+    "mssql1": {
+      "secretStore": "AzureAppSettings",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/expensetracker123dbserver/databases/ExpenseTrackerAPI_db",
+      "type": "mssql.azure",
+      "connectionId": "ConnectionStrings:Default"
+    }
+  }
+}
