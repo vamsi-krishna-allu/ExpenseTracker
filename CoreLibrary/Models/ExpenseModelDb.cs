@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace ExpenseTracker.Models
+namespace CoreLibrary.Models
 {
     public class ExpenseModelDb
     {

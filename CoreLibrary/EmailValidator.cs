@@ -9,7 +9,7 @@
         {
             if (value == null)
             {
-                return true;
+                return false;
             }
 
             if (!(value is string valueAsString))

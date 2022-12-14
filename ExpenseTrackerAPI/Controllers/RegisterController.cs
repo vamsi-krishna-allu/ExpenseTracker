@@ -1,4 +1,6 @@
-﻿using ExpenseTracker.Models;
+﻿using Database.Models;
+using Database.Repository;
+using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseTracker.Controllers
@@ -8,17 +10,25 @@ namespace ExpenseTracker.Controllers
     public class RegisterController : ControllerBase
     {
         private readonly ILogger<RegisterController> _logger;
+        private readonly IRepository<UserDbModel> _repository;
 
-        public RegisterController(ILogger<RegisterController> logger)
+        public RegisterController(ILogger<RegisterController> logger, IRepository<UserDbModel> repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         [HttpPost(Name = "registerUser")]
         public String RegisterUser(UserModel userModel)
         {
-            //new UserModel(userModel.UserId, userModel.FirstName, userModel.LastName, userModel.Email, userModel.Password);
-            //TODO: need to pass this model to store data in database
+            var userDbModel = new UserDbModel()
+            {
+                Email = userModel.Email,
+                Password = userModel.Password,
+                FirstName = userModel.FirstName,
+                LastName = userModel.LastName
+            };
+            _repository.Add(userDbModel);
             return "SUCCESS";
         }
     }

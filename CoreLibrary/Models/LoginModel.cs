@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace ExpenseTracker.Models
+namespace CoreLibrary.Models
 {
     public class LoginModel
     {

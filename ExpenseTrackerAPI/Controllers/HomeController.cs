@@ -1,7 +1,10 @@
 ﻿using CoreLibrary;
+using CoreLibrary.Models;
+using Database.Models;
+using Database.Repository;
+using Database.Validators;
 using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
 
 namespace ExpenseTracker.Controllers
 {
@@ -10,20 +13,26 @@ namespace ExpenseTracker.Controllers
     public class HomeController : ControllerBase
     {
         private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
+        private readonly IRepository<UserDbModel> _repository;
+        public HomeController(ILogger<HomeController> logger, IRepository<UserDbModel> repository)
         {
             _logger = logger;
+            _repository = repository;
         }
 
         [HttpPost(Name = "validateUser")]
-        public String ValidateUser(LoginModel loginModel)
+        public UserDbModel ValidateUser(LoginModel loginModel)
         {
-            if (loginModel.Email != null && loginModel.Password != null && Validators.IsPasswordValid(loginModel.Password) && EmailValidator.IsEmailValid(loginModel.Email))
+            if (PasswordValidator.IsValid(loginModel.Password) && EmailValidator.IsValid(loginModel.Email))
             {
-                return "SUCCESS";
+                List<UserDbModel> userDbModels = _repository.GetAll();
+                var resultUser = userDbModels.Find(userModel => userModel.Email == loginModel.Email && userModel.Password == loginModel.Password)
+                if(resultUser != null)
+                {
+                    return resultUser;
+                } 
             }
-            return "FAILURE";
+            return new UserDbModel();
         }
 
     }

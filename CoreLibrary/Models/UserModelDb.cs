@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace ExpenseTracker.Models
+namespace CoreLibrary.Models
 {
     public class UserModelDb
     {

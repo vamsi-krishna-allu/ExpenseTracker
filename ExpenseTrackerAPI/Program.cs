@@ -1,12 +1,13 @@
 using CoreLibrary.Context;
+using Database.Context;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<DatabaseContext>(options =>
+builder.Services.AddDbContext<ExpenseContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"), b => b.MigrationsAssembly("ExpenseTrackerAPI"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("Default"), b=> b.MigrationsAssembly("ExpenseTrackerAPI"));
 });
 
 builder.Services.AddControllers();
@@ -18,7 +19,7 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    var _db = scope.ServiceProvider.GetRequiredService<DatabaseContext>();
+    var _db = scope.ServiceProvider.GetRequiredService<ExpenseContext>();
     _db.Database.EnsureCreated();
 }
     // Configure the HTTP request pipeline.

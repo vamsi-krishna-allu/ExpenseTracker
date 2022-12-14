@@ -1,5 +1,4 @@
-﻿using CoreLibrary;
-using ExpenseTracker.Models;
+﻿using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseTracker.Controllers
@@ -16,7 +15,7 @@ namespace ExpenseTracker.Controllers
         [HttpPost]
         public IActionResult? Index(string username, string password)
         {
-            LoginModel loginModel = new LoginModel(username, password);
+            LoginModel loginModel = new(username, password);
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:7249/");
