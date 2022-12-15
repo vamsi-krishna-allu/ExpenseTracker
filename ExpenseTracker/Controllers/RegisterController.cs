@@ -1,4 +1,5 @@
-﻿using ExpenseTracker.Models;
+﻿using Database.Models;
+using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ExpenseTracker.Controllers
@@ -27,7 +28,15 @@ namespace ExpenseTracker.Controllers
                 var result = postTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    return View("../Home/Index");
+                    var status = result.Content.ReadFromJsonAsync<string>().Result;
+                    if(status == "SUCCESS")
+                    {
+                        return View("../Home/Index");
+                    }else
+                    {
+                        return View();
+                    }
+                    
                 }
             }
 
@@ -36,5 +45,7 @@ namespace ExpenseTracker.Controllers
             return View();
             
         }
+
+        
     }
 }
