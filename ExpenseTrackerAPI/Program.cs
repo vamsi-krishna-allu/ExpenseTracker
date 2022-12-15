@@ -1,5 +1,6 @@
-using CoreLibrary.Context;
 using Database.Context;
+using Database.Models;
+using Database.Repository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,7 +15,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddScoped<IRepository<ExpenseDbModel>, ExpenseRepository>();
+builder.Services.AddScoped<IRepository<UserDbModel>, UserRepository>();
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())

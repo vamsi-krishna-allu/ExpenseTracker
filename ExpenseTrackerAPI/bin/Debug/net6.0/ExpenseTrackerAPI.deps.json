@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "ExpenseTrackerAPI/1.0.0": {
         "dependencies": {
-          "CoreLibrary": "1.0.0",
           "Database": "1.0.0",
           "EntityFramework": "6.4.4",
           "Microsoft.AspNet.Identity.EntityFramework": "2.2.3",
@@ -594,15 +593,6 @@
           }
         }
       },
-      "CoreLibrary/1.0.0": {
-        "dependencies": {
-          "EntityFramework": "6.4.4",
-          "Microsoft.EntityFrameworkCore": "6.0.6"
-        },
-        "runtime": {
-          "CoreLibrary.dll": {}
-        }
-      },
       "Database/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.6"
@@ -1031,11 +1021,6 @@
       "sha512": "sha512-CeWTdRNfRaSh0pm2gDTJFwVaXfTq6Xwv/sA887iwPTneW7oMtMlpvDIO+U60+3GWTB7Aom6oQwv5VZVUhQRdPQ==",
       "path": "system.windows.extensions/4.7.0",
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
-    },
-    "CoreLibrary/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Database/1.0.0": {
       "type": "project",

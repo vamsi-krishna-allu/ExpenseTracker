@@ -9,8 +9,6 @@ C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\bin\Debug\net6.0\
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\bin\Debug\net6.0\CoreLibrary.dll
-C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\bin\Debug\net6.0\CoreLibrary.pdb
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\obj\Debug\net6.0\ExpenseTrackerAPI.csproj.AssemblyReference.cache
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\obj\Debug\net6.0\ExpenseTrackerAPI.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTrackerAPI\obj\Debug\net6.0\ExpenseTrackerAPI.AssemblyInfoInputs.cache

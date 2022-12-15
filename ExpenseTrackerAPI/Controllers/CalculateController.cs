@@ -18,16 +18,10 @@ namespace ExpenseTracker.Controllers
         }
 
         [HttpPost(Name = "calculateExpense")]
-        public String CalculateExpense(string expenseType, string expenseAmount)
+        public String CalculateExpense(ExpenseDbModel expenseDbModel)
         {
-            if (expenseType != null && expenseAmount != null)
+            if (expenseDbModel.ExpenseType != null && expenseDbModel.Amount != null)
             {
-                var expenseDbModel = new ExpenseDbModel()
-                {
-                    ExpenseType = expenseType,
-                    Amount = expenseAmount,
-                    Date = new DateTime().ToString()
-                };
                 _repository.Add(expenseDbModel);
                 return "SUCCESS";
             }
