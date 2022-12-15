@@ -1,6 +1,4 @@
-﻿using CoreLibrary;
-using CoreLibrary.Models;
-using Database.Models;
+﻿using Database.Models;
 using Database.Repository;
 using Database.Validators;
 using ExpenseTracker.Models;
@@ -26,7 +24,7 @@ namespace ExpenseTracker.Controllers
             if (PasswordValidator.IsValid(loginModel.Password) && EmailValidator.IsValid(loginModel.Email))
             {
                 List<UserDbModel> userDbModels = _repository.GetAll();
-                var resultUser = userDbModels.Find(userModel => userModel.Email == loginModel.Email && userModel.Password == loginModel.Password)
+                var resultUser = userDbModels.Find(userModel => userModel.Email == loginModel.Email && userModel.Password == loginModel.Password);
                 if(resultUser != null)
                 {
                     return resultUser;
