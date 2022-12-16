@@ -30,6 +30,22 @@ namespace ExpenseTrackerTests
         }
 
         [TestMethod]
+        public void TestWithAtTheRateAtStart()
+        {
+            bool isEmailValid;
+            isEmailValid = EmailValidator.IsValid("@abcde");
+            Assert.AreEqual(false, isEmailValid);
+        }
+
+        [TestMethod]
+        public void TestWithAtTheRateAtStartAndEnd()
+        {
+            bool isEmailValid;
+            isEmailValid = EmailValidator.IsValid("@abcde@");
+            Assert.AreEqual(false, isEmailValid);
+        }
+
+        [TestMethod]
         public void TestWithoutAtTheRate()
         {
             bool isEmailValid;
