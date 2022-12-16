@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "User Expenses";
+}
+
+<div class="text-center" style="display: flex;
+    flex-direction: column;">
+    <h1 class="display-4">View Expenses</h1>
+    <br />
+    <form method="post" asp-controller="Calculate" asp-action="Back">
+        <table>
+            <tr>
+                <th>Expense Type</th>
+                <th>Expense Amount</th>
+            </tr>
+            <tr>
+                <td>Groceries</td>
+                <td>@ViewBag.ExpenseAmount.Groceries</td>
+            </tr>
+            <tr>
+                <td>Phone Bill</td>
+                <td>@ViewBag.ExpenseAmount.PhoneBill</td>
+            </tr>
+            <tr>
+                <td>Bus Pass</td>
+                <td>@ViewBag.ExpenseAmount.BusPass</td>
+            </tr>
+            <tr>
+                <td>Subscriptions</td>
+                <td>@ViewBag.ExpenseAmount.Subscriptions</td>
+            </tr>
+            <tr>
+                <td>Alcohol</td>
+                <td>@ViewBag.ExpenseAmount.Alcohol</td>
+            </tr>
+            <tr>
+                <td>Furniture</td>
+                <td>@ViewBag.ExpenseAmount.Furniture</td>
+            </tr>
+            <tr>
+                <td>Taxi or Travel</td>
+                <td>@ViewBag.ExpenseAmount.TaxiorTravel</td>
+            </tr>
+            <tr>
+                <td>Electricity</td>
+                <td>@ViewBag.ExpenseAmount.Electricity</td>
+            </tr>
+            <tr>
+                <td>Hydro</td>
+                <td>@ViewBag.ExpenseAmount.Hydro</td>
+            </tr>
+            <tr>
+                <td>Laundry</td>
+                <td>@ViewBag.ExpenseAmount.Laundry</td>
+            </tr>
+            <tr>
+                <td>Miscellaneous</td>
+                <td>@ViewBag.ExpenseAmount.Miscellaneous</td>
+            </tr>
+        </table>
+    
+    <br />
+        <button class="local-button" type="submit" title="Back To Calculate"> Back To Calculate </button>
+    </form>
+</div>

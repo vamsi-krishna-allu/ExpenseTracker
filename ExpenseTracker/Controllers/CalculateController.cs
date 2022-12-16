@@ -3,9 +3,6 @@ using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using NToastNotify;
-using System.Net.Http.Json;
-using System.Security.Cryptography;
-using System.Text.Json.Serialization;
 
 namespace ExpenseTracker.Controllers
 {
@@ -18,6 +15,37 @@ namespace ExpenseTracker.Controllers
         {
             _logger = logger;
             toastNotification = _toastNotification;
+        }
+
+        public async Task<IActionResult> Expenses()
+        {
+            var expenses = await GetExpenses();
+            ViewBag.ExpenseAmount = expenses;
+            return View("../Calculate/Expenses");
+        }
+
+        public async Task<ExpenseTypeModelcs> GetExpenses()
+        {
+            var ExpenseTypeModelcs = new ExpenseTypeModelcs();
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("https://localhost:7249/");
+                UserIdModel userIdModel = new UserIdModel();
+                userIdModel.Id = Store.User.UserId;
+                var result = await client.PostAsJsonAsync<UserIdModel>("Expense", userIdModel);
+
+                if (result.IsSuccessStatusCode)
+                {
+                    var user = await result.Content.ReadAsStringAsync();
+                    ExpenseTypeModelcs = JsonConvert.DeserializeObject<ExpenseTypeModelcs>(user);
+                    
+                    if (ExpenseTypeModelcs != null)
+                    {
+                        return ExpenseTypeModelcs;
+                    }
+                }
+            }
+            return ExpenseTypeModelcs;
         }
 
         [HttpPost]
@@ -47,6 +75,12 @@ namespace ExpenseTracker.Controllers
             toastNotification.AddErrorToastMessage("Server Error. Please contact administrator.");
 
             return View("../Home/Index");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult>? Back()
+        {
+            return View("../Calculate/Index");
         }
 
         [HttpPost]
