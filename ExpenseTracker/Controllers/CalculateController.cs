@@ -2,6 +2,7 @@
 using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
+using NToastNotify;
 using System.Net.Http.Json;
 using System.Security.Cryptography;
 using System.Text.Json.Serialization;
@@ -11,10 +12,12 @@ namespace ExpenseTracker.Controllers
     public class CalculateController : Controller
     {
         private readonly ILogger<CalculateController> _logger;
+        private readonly IToastNotification toastNotification;
 
-        public CalculateController(ILogger<CalculateController> logger)
+        public CalculateController(ILogger<CalculateController> logger, IToastNotification _toastNotification)
         {
             _logger = logger;
+            toastNotification = _toastNotification;
         }
 
         [HttpPost]
@@ -34,15 +37,16 @@ namespace ExpenseTracker.Controllers
                     Store.User = userDbModel;
                     if (userDbModel != null && userDbModel.Email != null)
                     {
+                        toastNotification.AddSuccessToastMessage("Successfully logged in user "+userDbModel.FirstName);
                         return View("../Calculate/Index");
                     }
-                    return View();
+                    toastNotification.AddErrorToastMessage("Invalid Credentials! login failed");
+                    return View("../Home/Index");
                 }
             }
+            toastNotification.AddErrorToastMessage("Server Error. Please contact administrator.");
 
-            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
-
-            return View();
+            return View("../Home/Index");
         }
 
         [HttpPost]
@@ -65,18 +69,15 @@ namespace ExpenseTracker.Controllers
                 
                 if (result.IsSuccessStatusCode)
                 {
+                    toastNotification.AddSuccessToastMessage("Expense with amount " + expenseAmount + " saved succesfully for user");
                     return View("../Calculate/Index");
                 }
                 else
                 {
-                    return View();
+                    toastNotification.AddErrorToastMessage("Saving expense amount failed for the user");
+                    return View("../Calculate/Index");
                 }
             }
-
-            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
-
-            return View();
-
         }
     }
 }

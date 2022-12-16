@@ -1,16 +1,19 @@
 ﻿using Database.Models;
 using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
+using NToastNotify;
 
 namespace ExpenseTracker.Controllers
 {
     public class RegisterController : Controller
     {
         private readonly ILogger<RegisterController> _logger;
+        private readonly IToastNotification toastNotification;
 
-        public RegisterController(ILogger<RegisterController> logger)
+        public RegisterController(ILogger<RegisterController> logger, IToastNotification _toastNotification)
         {
             _logger = logger;
+            toastNotification = _toastNotification;
         }
         
         [HttpPost]
@@ -26,17 +29,15 @@ namespace ExpenseTracker.Controllers
 
                 if (result.IsSuccessStatusCode)
                 {
+                    toastNotification.AddSuccessToastMessage("Registered User " + userModel.FirstName + " successfully");
                     return View("../Home/Index");
                 }
                 else
                 {
-                    return View();
+                    toastNotification.AddErrorToastMessage("Unable to save user");
+                    return View("../Home/Register");
                 }
             }
-
-            ModelState.AddModelError(string.Empty, "Server Error. Please contact administrator.");
-
-            return View();
             
         }
 
