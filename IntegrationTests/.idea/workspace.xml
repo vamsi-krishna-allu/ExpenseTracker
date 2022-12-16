@@ -2,8 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2165f64-46d0-4dea-a03f-f6a5cde75f89" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.vs/ExpenseTrackerSolution/DesignTimeBuild/.dtbcache.v2" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/ExpenseTrackerSolution/DesignTimeBuild/.dtbcache.v2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestCases/CalculateExpense.robot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestCases/RegisterAccount.robot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/TestCases/ViewExpense.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.vs/ExpenseTrackerSolution/v17/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../.vs/ExpenseTrackerSolution/v17/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/bin/Debug/net6.0/ExpenseTracker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../ExpenseTracker/bin/Debug/net6.0/ExpenseTracker.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/bin/Debug/net6.0/ExpenseTracker.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../ExpenseTracker/bin/Debug/net6.0/ExpenseTracker.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/obj/Debug/net6.0/ExpenseTracker.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../ExpenseTracker/obj/Debug/net6.0/ExpenseTracker.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/obj/Debug/net6.0/ExpenseTracker.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../ExpenseTracker/obj/Debug/net6.0/ExpenseTracker.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ExpenseTracker/obj/staticwebassets.pack.sentinel" beforeDir="false" afterPath="$PROJECT_DIR$/../ExpenseTracker/obj/staticwebassets.pack.sentinel" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/Login.robot" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/Login.robot" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/log.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/log.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/output.xml" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/output.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TestCases/report.html" beforeDir="false" afterPath="$PROJECT_DIR$/TestCases/report.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -12,14 +24,59 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TestCases/Login.robot">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state>
+              <caret selection-end-line="15" selection-end-column="17" />
               <folding>
-                <element signature="e#0#44#1" expanded="true" />
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestCases/report.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestCases/RegisterAccount.robot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="26" column="85" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="85" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TestCases/CalculateExpense.robot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="370">
+              <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TestCases/ViewExpense.robot">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-line="19" selection-end-column="17" />
+              <folding>
+                <element signature="e#0#44#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -33,13 +90,16 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/TestCases/ViewExpense.robot" />
         <option value="$PROJECT_DIR$/TestCases/Login.robot" />
+        <option value="$PROJECT_DIR$/TestCases/RegisterAccount.robot" />
+        <option value="$PROJECT_DIR$/TestCases/CalculateExpense.robot" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="325" />
-    <option name="y" value="44" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-39" />
+    <option name="y" value="135" />
     <option name="width" value="1400" />
     <option name="height" value="992" />
   </component>
@@ -49,7 +109,22 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="ProjectPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="IntegrationTests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IntegrationTests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IntegrationTests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IntegrationTests" type="462c0819:PsiDirectoryNode" />
+              <item name="TestCases" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope" />
     </panes>
   </component>
@@ -83,16 +158,12 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1048" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17913593" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Python Console" />
-      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.32896176" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -100,18 +171,59 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30819672" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/TestCases/report.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCases/ViewExpense.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="19" selection-end-column="17" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TestCases/Login.robot">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="39" lean-forward="true" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state>
+          <caret selection-end-line="15" selection-end-column="17" />
           <folding>
-            <element signature="e#0#44#1" expanded="true" />
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCases/RegisterAccount.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="85" selection-start-line="26" selection-start-column="85" selection-end-line="26" selection-end-column="85" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TestCases/CalculateExpense.robot">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="26" column="66" selection-start-line="26" selection-start-column="66" selection-end-line="26" selection-end-column="66" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
           </folding>
         </state>
       </provider>
