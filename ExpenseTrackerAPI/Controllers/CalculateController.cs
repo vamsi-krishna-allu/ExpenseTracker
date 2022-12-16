@@ -1,4 +1,5 @@
-﻿using Database.Models;
+﻿using Database;
+using Database.Models;
 using Database.Repository;
 using Microsoft.AspNetCore.Mvc;
 
@@ -22,6 +23,7 @@ namespace ExpenseTracker.Controllers
         {
             if (expenseDbModel.ExpenseType != null && expenseDbModel.Amount != null)
             {
+                expenseDbModel.ExpenseType = Common.getExpenseType(expenseDbModel.ExpenseType);
                 _repository.Add(expenseDbModel);
                 return "SUCCESS";
             }

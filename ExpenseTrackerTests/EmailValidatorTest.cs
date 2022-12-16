@@ -1,4 +1,4 @@
-using CoreLibrary;
+using Database.Validators;
 
 namespace ExpenseTrackerTests
 {
@@ -9,7 +9,7 @@ namespace ExpenseTrackerTests
         public void TestWithNullEmail()
         {
             bool isEmailValid;
-            isEmailValid = EmailValidator.IsEmailValid(null);
+            isEmailValid = EmailValidator.IsValid(null);
             Assert.AreEqual(false, isEmailValid);
         }
 
@@ -17,7 +17,7 @@ namespace ExpenseTrackerTests
         public void TestWithEmptyEmail()
         {
             bool isEmailValid;
-            isEmailValid = EmailValidator.IsEmailValid("");
+            isEmailValid = EmailValidator.IsValid("");
             Assert.AreEqual(false, isEmailValid);
         }
 
@@ -25,7 +25,7 @@ namespace ExpenseTrackerTests
         public void TestWithAtTheRateAtEnd()
         {
             bool isEmailValid;
-            isEmailValid = EmailValidator.IsEmailValid("abcde@");
+            isEmailValid = EmailValidator.IsValid("abcde@");
             Assert.AreEqual(false, isEmailValid);
         }
 
@@ -33,7 +33,7 @@ namespace ExpenseTrackerTests
         public void TestWithoutAtTheRate()
         {
             bool isEmailValid;
-            isEmailValid = EmailValidator.IsEmailValid("abcdefghijklmnopqrstuv");
+            isEmailValid = EmailValidator.IsValid("abcdefghijklmnopqrstuv");
             Assert.AreEqual(false, isEmailValid);
         }
 
@@ -42,7 +42,7 @@ namespace ExpenseTrackerTests
         public void TestWithValidEmail()
         {
             bool isEmailValid;
-            isEmailValid = EmailValidator.IsEmailValid("Abc@gmail.com");
+            isEmailValid = EmailValidator.IsValid("Abc@gmail.com");
             Assert.AreEqual(true, isEmailValid);
         }
     }

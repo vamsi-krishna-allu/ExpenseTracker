@@ -1,7 +1,10 @@
 ﻿using Database.Models;
 using ExpenseTracker.Models;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Net.Http.Json;
+using System.Security.Cryptography;
+using System.Text.Json.Serialization;
 
 namespace ExpenseTracker.Controllers
 {
@@ -9,29 +12,27 @@ namespace ExpenseTracker.Controllers
     {
         private readonly ILogger<CalculateController> _logger;
 
-        private UserDbModel userDbModel;
-
         public CalculateController(ILogger<CalculateController> logger)
         {
             _logger = logger;
         }
 
         [HttpPost]
-        public IActionResult? Index(string username, string password)
+        public async Task<IActionResult>? Index(string username, string password)
         {
             LoginModel loginModel = new(username, password);
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:7249/");
 
-                var postTask = client.PostAsJsonAsync<LoginModel>("Home", loginModel);
-                postTask.Wait();
+                var result = await client.PostAsJsonAsync<LoginModel>("Home", loginModel);
 
-                var result = postTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    userDbModel = result.Content.ReadFromJsonAsync<UserDbModel>().Result;
-                    if(userDbModel != null && userDbModel.Email != null)
+                    var user = await result.Content.ReadAsStringAsync();
+                    var userDbModel = JsonConvert.DeserializeObject<UserDbModel>(user);
+                    Store.User = userDbModel;
+                    if (userDbModel != null && userDbModel.Email != null)
                     {
                         return View("../Calculate/Index");
                     }
@@ -45,37 +46,30 @@ namespace ExpenseTracker.Controllers
         }
 
         [HttpPost]
-        public IActionResult? SaveExpense(string expenseType, string expenseAmount)
+        public async Task<IActionResult>? SaveExpense(string expenseType, string expenseAmount)
         {
             ExpenseDbModel expenseModel = new ExpenseDbModel()
             {
-                _id = "1",
+                _id = Store.User.UserId + DateTime.Now.ToString(),
                 ExpenseType = expenseType,
                 Amount = expenseAmount,
-                Date = new DateTime().ToString(),
-                User = userDbModel
+                Date = DateTime.Now.ToString(),
+                UserId = Store.User.UserId
             };
 
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("https://localhost:7249/");
 
-                var postTask = client.PostAsJsonAsync<ExpenseDbModel>("Calculate", expenseModel);
-                postTask.Wait();
-
-                var result = postTask.Result;
+                var result = await client.PostAsJsonAsync<ExpenseDbModel>("Calculate", expenseModel);
+                
                 if (result.IsSuccessStatusCode)
                 {
-                    var status = result.Content.ReadFromJsonAsync<string>().Result;
-                    if (status == "SUCCESS")
-                    {
-                        return View("../Home/Index");
-                    }
-                    else
-                    {
-                        return View();
-                    }
-
+                    return View("../Calculate/Index");
+                }
+                else
+                {
+                    return View();
                 }
             }
 

@@ -23,12 +23,11 @@ namespace ExpenseTracker.Controllers
         {
             var userDbModel = new UserDbModel()
             {
-                UserId = userModel.Email.Replace("@","ATTHERATE").ToUpper(),
+                UserId = userModel.Email.Replace("@","ATTHERATE").Replace(".","DOT").ToUpper(),
                 Email = userModel.Email,
                 Password = userModel.Password,
                 FirstName = userModel.FirstName,
                 LastName = userModel.LastName,
-                ExpenseModels = new List<ExpenseDbModel>()
             };
             _repository.Add(userDbModel);
             return "SUCCESS";

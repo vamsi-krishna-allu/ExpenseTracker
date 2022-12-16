@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,6 +11,7 @@ namespace Database.Models
     public class ExpenseDbModel
     {
         [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public string _id { get; set; }
 
         [Required]
@@ -22,6 +24,6 @@ namespace Database.Models
         public String Date { get; set; }
 
         [Required]
-        public UserDbModel User { get; set; }
+        public String UserId { get; set; }
     }
 }

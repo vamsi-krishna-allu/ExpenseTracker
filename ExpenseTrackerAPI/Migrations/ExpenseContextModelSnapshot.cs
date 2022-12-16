@@ -24,6 +24,7 @@ namespace ExpenseTrackerAPI.Migrations
             modelBuilder.Entity("Database.Models.ExpenseDbModel", b =>
                 {
                     b.Property<string>("_id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Amount")
@@ -40,11 +41,9 @@ namespace ExpenseTrackerAPI.Migrations
 
                     b.Property<string>("UserId")
                         .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("_id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("ExpenseDbModels");
                 });
@@ -74,22 +73,6 @@ namespace ExpenseTrackerAPI.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("UserDbModels");
-                });
-
-            modelBuilder.Entity("Database.Models.ExpenseDbModel", b =>
-                {
-                    b.HasOne("Database.Models.UserDbModel", "User")
-                        .WithMany("ExpenseModels")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("Database.Models.UserDbModel", b =>
-                {
-                    b.Navigation("ExpenseModels");
                 });
 #pragma warning restore 612, 618
         }

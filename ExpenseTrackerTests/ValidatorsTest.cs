@@ -1,4 +1,4 @@
-using CoreLibrary;
+using Database.Validators;
 
 namespace ExpenseTrackerTests
 {
@@ -9,7 +9,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithNullPassword()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid(null);
+            isPasswordValid = PasswordValidator.IsValid(null);
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -17,7 +17,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithEmptyPassword()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("");
+            isPasswordValid = PasswordValidator.IsValid("");
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -25,7 +25,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithPasswordLengthLessThan6()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("abcde");
+            isPasswordValid = PasswordValidator.IsValid("abcde");
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -33,7 +33,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithPasswordLengthGreaterThan20()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("abcdefghijklmnopqrstuv");
+            isPasswordValid = PasswordValidator.IsValid("abcdefghijklmnopqrstuv");
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -41,7 +41,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithPasswordHavingNoUpperCase()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("abcdefghi");
+            isPasswordValid = PasswordValidator.IsValid("abcdefghi");
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -50,7 +50,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithPasswordWithNoLowerCase()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("ABCDEFGHIL");
+            isPasswordValid = PasswordValidator.IsValid("ABCDEFGHIL");
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -59,7 +59,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithPasswordWithNoSpecialCharacters()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("Abcdefghi");
+            isPasswordValid = PasswordValidator.IsValid("Abcdefghi");
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -67,7 +67,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithPasswordWithEmptyCharacters()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("Abc hihdjsbe@ge");
+            isPasswordValid = PasswordValidator.IsValid("Abc hihdjsbe@ge");
             Assert.AreEqual(false, isPasswordValid);
         }
 
@@ -75,7 +75,7 @@ namespace ExpenseTrackerTests
         public void TestPasswordValidateWithValidPassword()
         {
             bool isPasswordValid;
-            isPasswordValid = Validators.IsPasswordValid("Abc@hijkl");
+            isPasswordValid = PasswordValidator.IsValid("Abc@hijkl");
             Assert.AreEqual(true, isPasswordValid);
         }
     }

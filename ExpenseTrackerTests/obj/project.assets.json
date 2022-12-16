@@ -2013,6 +2013,19 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "Database/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Microsoft.EntityFrameworkCore": "6.0.6"
+        },
+        "compile": {
+          "bin/placeholder/Database.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Database.dll": {}
+        }
       }
     }
   },
@@ -6852,10 +6865,16 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "Database/1.0.0": {
+      "type": "project",
+      "path": "../Database/Database.csproj",
+      "msbuildProject": "../Database/Database.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Database >= 1.0.0",
       "MSTest.TestAdapter >= 2.2.8",
       "MSTest.TestFramework >= 2.2.8",
       "Microsoft.EntityFrameworkCore >= 6.0.6",
@@ -6895,7 +6914,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\visha\\source\\ExpenseTrackerSolution\\Database\\Database.csproj": {
+              "projectPath": "C:\\Users\\visha\\source\\ExpenseTrackerSolution\\Database\\Database.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

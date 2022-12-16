@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "pTILoHJ+vndeCP8wJh83w00arWLM7nLTcGCXjy2k07xP9qt5OTRHvJukybz/WHW6IiP+127nNEKyVVbyGAK1/g==",
+  "dgSpecHash": "bJuXRGbvfynXn1l4sPxp9+COUSuGeTSIzX2Mgu8QdNu+OhLDBaQ3bEStKY/Tge96fyM/i9GBfSkCTZKqhD2x1A==",
   "success": true,
   "projectFilePath": "C:\\Users\\visha\\source\\ExpenseTrackerSolution\\ExpenseTracker\\ExpenseTracker.csproj",
   "expectedPackageFiles": [
@@ -15,6 +15,7 @@
     "C:\\Users\\visha\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\6.0.0\\microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\visha\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
     "C:\\Users\\visha\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\visha\\.nuget\\packages\\newtonsoft.json\\12.0.1\\newtonsoft.json.12.0.1.nupkg.sha512",
     "C:\\Users\\visha\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\visha\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
     "C:\\Users\\visha\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"

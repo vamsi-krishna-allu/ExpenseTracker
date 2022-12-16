@@ -30,3 +30,4 @@ C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\bin\Debug\net6.0\Mic
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\bin\Debug\net6.0\Database.dll
 C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\bin\Debug\net6.0\Database.pdb
+C:\Users\visha\source\ExpenseTrackerSolution\ExpenseTracker\bin\Debug\net6.0\Newtonsoft.Json.dll

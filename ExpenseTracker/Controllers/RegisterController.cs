@@ -14,7 +14,7 @@ namespace ExpenseTracker.Controllers
         }
         
         [HttpPost]
-        public IActionResult? Index(string firstName, string lastName, string email, string password, string repassword)
+        public async Task<IActionResult>? Index(string firstName, string lastName, string email, string password, string repassword)
         {
             UserModel userModel = new UserModel("1", firstName, lastName, email, password);
 
@@ -22,21 +22,15 @@ namespace ExpenseTracker.Controllers
             {
                 client.BaseAddress = new Uri("https://localhost:7249/");
 
-                var postTask = client.PostAsJsonAsync<UserModel>("Register", userModel);
-                postTask.Wait();
+                var result = await client.PostAsJsonAsync<UserModel>("Register", userModel);
 
-                var result = postTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
-                    var status = result.Content.ReadFromJsonAsync<string>().Result;
-                    if(status == "SUCCESS")
-                    {
-                        return View("../Home/Index");
-                    }else
-                    {
-                        return View();
-                    }
-                    
+                    return View("../Home/Index");
+                }
+                else
+                {
+                    return View();
                 }
             }
 

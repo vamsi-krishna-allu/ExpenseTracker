@@ -25,7 +25,5 @@ namespace Database.Models
         [MinLength(6)]
         [MaxLength(20)]
         public string Password { get; set; }
-
-        public ICollection<ExpenseDbModel> ExpenseModels { get; set; } = new List<ExpenseDbModel>();
     }
 }
